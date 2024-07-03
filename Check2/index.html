@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id="selectLanguage" onchange="changeLang()">
+        <option value="empty">選択してください</option>
+        <option value="jpn">日本語</option>
+        <option value="en">English</option>
+        <option value="all">全て表示</option>
+    </select>
+    <table>
+        <tr id="jpRow">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="enRow">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        function changeLang() {
+            let selected = document.getElementById("selectLanguage").value;
+            let jpRowStyle = document.getElementById("jpRow");
+            let enRowStyle = document.getElementById("enRow");
+            if(selected === "jpn"){
+                jpRowStyle.style.display="block";
+                enRowStyle.style.display="none";
+            }else if(selected==="en"){
+                jpRowStyle.style.display="none";
+                enRowStyle.style.display="block";
+            }else if(selected==="all"){
+                jpRow.style.display="block";
+                enRow.style.display="block";
+            }else {
+                jpRow.style.display="block";
+                enRow.style.display="block";
+            }
+        }
+    </script>
+</body>
+</html>
